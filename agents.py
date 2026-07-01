@@ -3,8 +3,13 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from schema import AgentState, InquiryAnalysis
 
-# Initialize LLM
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+# Swapping the backend to Qwen Cloud via its OpenAI-compatible endpoint
+llm = ChatOpenAI(
+    model="qwen3.7-plus",
+    api_key=os.getenv("DASHSCOPE_API_KEY"),
+    base_url="https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+    temperature=0
+)
 
 def inquiry_understanding_agent(state: AgentState) -> Dict[str, Any]:
     """Classifies user intent, extracts fields, and assigns evaluation marks."""
