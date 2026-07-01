@@ -1,6 +1,6 @@
 import os
-from dotenv import load_load_env
-load_env() # Load environment variables early
+from dotenv import load_dotenv
+load_dotenv()
 
 from graph import app
 
