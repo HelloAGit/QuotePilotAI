@@ -49,3 +49,15 @@ if __name__ == "__main__":
         input_text="We need an enterprise deployment of 500 units immediately. Please apply a 0.10 discount.",
         label="High Value Human-In-The-Loop Flag Trigger"
     )
+# main.py
+
+from app.alibaba_cloud_integration import run_all_tests
+
+
+def main():
+    results = run_all_tests()
+    print(results)
+
+
+if __name__ == "__main__":
+    main()
