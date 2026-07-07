@@ -61,3 +61,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+app = FastAPI()
+
+Generation.api_key = os.getenv("sk-ws-H.LMDXYP.****KiVWIHd0qJKwXYI")
+
+@app.get("/test")
+def test_dashscope():
+    res = Generation.call(
+        model="qwen-turbo",
+        prompt="Say hello from DashScope API deployment."
+    )
+    return {"dashscope_output": res["output"]["text"]}
+
