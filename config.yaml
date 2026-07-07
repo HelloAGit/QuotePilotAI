@@ -1,7 +1,6 @@
 model: qwen-turbo
 endpoint: https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
-api_key_env: DASHSCOPE_API_KEY
-
+api_key_env: sk-ws-H.LMDXYP.****KiVWIHd0qJKwXYI
 parameters:
   max_tokens: 1024
   temperature: 0.7
